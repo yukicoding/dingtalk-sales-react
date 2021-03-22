@@ -1,0 +1,18 @@
+body {
+    font-size: .30rem;
+}
+h1 {
+    font-size: .34rem;
+}
+h2 {
+    font-size: .32rem;
+}
+img {
+    vertical-align: top;
+}
+input {
+    border: none;
+}
+select {
+    border: none;
+}
