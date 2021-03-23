@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
-import { Tabs, WhiteSpace, Badge,SearchBar,TabBar } from 'antd-mobile'
-import styles from './Orders.less'
+import { Tabs, WhiteSpace,TabBar } from 'antd-mobile'
+import styles from './index.less'
 import activeImage1 from '@/assets/images/icon_all_fill.png'
 import image1 from '@/assets/images/icon_all_fill_unselectef.png'
 import activeImage2 from '@/assets/images/icon_linchuang_selected.png'
@@ -16,7 +16,7 @@ const tabs = [
 ];
 export default function Orders(props:any) {
   const [state,setState] = useState('')
-  const [ selectedTab,setSelectedTab] = useState('redTab')
+  const [ selectedTab,setSelectedTab] = useState(1)
   const [ hidden,setHidden] = useState(false)
   const [ fullScreen,setFullScreen] = useState(false)
   const [index,setIndex] = useState(0)
@@ -28,7 +28,7 @@ export default function Orders(props:any) {
     <div className={styles['orders']}>
 
     <Tabs tabs={tabs}
-      initialPage={1}
+      initialPage={0}
       onChange={(tab, index) => { setIndex(index) }}
       onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
       usePaged={false}
@@ -63,10 +63,10 @@ export default function Orders(props:any) {
               background: `url(${activeImage1}) center center /  21px 21px no-repeat` }}
             />
             }
-            selected={selectedTab === 'blueTab'}
+            selected={selectedTab === 1}
             badge={1}
             onPress={() => {
-              setSelectedTab('blueTab')
+              setSelectedTab(1)
             
             }}
             data-seed="logId"
@@ -92,9 +92,9 @@ export default function Orders(props:any) {
             title="临床订单"
             key="临床订单"
             dot
-            selected={selectedTab === 'greenTab'}
+            selected={selectedTab === 2}
             onPress={() => {
-              setSelectedTab('greenTab')
+              setSelectedTab(2)
              
             }}
           >
@@ -105,9 +105,9 @@ export default function Orders(props:any) {
             selectedIcon={{ uri: activeImage3 }}
             title="科研订单"
             key="科研订单"
-            selected={selectedTab === 'yellowTab'}
+            selected={selectedTab === 3}
             onPress={() => {
-              setSelectedTab('yellowTab')
+              setSelectedTab(3)
               
             }}
           >
